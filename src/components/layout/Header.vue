@@ -5,7 +5,9 @@
         <div class="container">
           <div class="navbar-start">
             <div class="navbar-item">
-              <a href="/"><strong>🎞 Platzi Music</strong></a>
+              <router-link class="navbar-item" to="search"
+                >🎞 Platzi Music</router-link
+              >
             </div>
           </div>
           <div class="navbar-end navbar-menu">
