@@ -1,8 +1,31 @@
-import Vue from "vue";
-import App from "./App.vue";
+import Vue from 'vue'
+import App from './App.vue'
+import VueRouter from 'vue-router'
 
-Vue.config.productionTip = false;
+import msToMm from '@/filters/ms-to-mm'
+import blur from '@/directives/blur'
+
+import routes from '@/routes'
+import store from '@/store'
+import i18n from '@/i18n'
+
+import EventBus from '@/plugins/event-bus'
+
+/* con Vue.use() podemos decirle a vue que use un plugin o dependencia */
+Vue.use(EventBus)
+Vue.use(VueRouter)
+Vue.use(msToMm)
+Vue.use(blur)
+
+const router = new VueRouter({
+  routes,
+  mode: 'history' /* para usar el history mode nativo */,
+})
 
 new Vue({
+  el: '#app',
   render: (h) => h(App),
-}).$mount("#app");
+  router,
+  store,
+  i18n,
+})
