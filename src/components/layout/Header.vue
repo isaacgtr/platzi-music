@@ -5,7 +5,7 @@
         <div class="container">
           <div class="navbar-start">
             <div class="navbar-item">
-              <router-link class="navbar-item" to="search"
+              <router-link class="navbar-item" :to="{ name: 'search' }"
                 >🎞 Platzi Music</router-link
               >
             </div>
